@@ -1,29 +1,49 @@
 {% extends 'base.html' %}
 {% block body %}
     <div id="content" xmlns="http://www.w3.org/1999/html">
-        <div class="panel panel-info">
+
+        <div class="panel panel-success">
+
             <div class="panel-body">
                 <h1>ApacheLogParser</h1>
             </div>
+
             <div class="panel-footer">
-                <form >
-                    <div class="form-group ">
-                        <div class="row">
-                            <div class="col-md-5">
-                            </div>
-                            <div class="col-md-4">
-                                 <input type="file" >
-                            </div>
-                        </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col-md-12">
-                                 <input class="btn btn-success" type="submit" value="Submit">
-                            </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-3">
+                        <select class="form-control">
+                        <option value="one">"%{Host}i %h %l %u %t %D \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\""</option>
+                        <option value="two">"%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %I %O"</option>
+                        <option value="three">"%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" **%T/%D**"</option>
+                        <option value="four">"%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\""</option>
+                        <option value="five">"%h %l %u %t \"%r\" %>s %b **%T/%D**"</option>
+                        <option value="five">"%h %l %u %t \"%r\" %>s %b"</option>
+                        <option value="five">"%{Referer}i -> %U"</option>
+                        <option value="five">"%{User-agent}i"</option>
+                        </select>
+
                         </div>
 
 
-                 </form>
+                        <form method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-5"></div>
+                                <div class="col-md-5">
+                                    <input type="file" id="exampleInputFile">
+                              </div>
+                          </div>
+                        </div>
+
+                            <button type="submit" class="btn btn-success">Upload</button>
+                        </form>
+
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
+
             </div>
 
 
